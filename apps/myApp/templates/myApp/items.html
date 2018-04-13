@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/myApp/skeleton.css' %}">
+    <link rel="stylesheet" href="{% static 'css/myApp/styles.css' %}">
+    <title>{{ item.name }}</title>
+</head>
+<body>
+    <div id="top">
+        <a href="/dashboard">Home</a> | <a href="/logout">Logout</a>
+    </div>
+    <hr>
+    <h5>{{ product.name }}</h5>
+    <p>Users who added t his product/item under their wish list:</p>
+    <ul>
+        {% for item in items %}
+            <li>{{ item.name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
